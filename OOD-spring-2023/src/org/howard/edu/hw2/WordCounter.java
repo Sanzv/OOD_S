@@ -1,11 +1,12 @@
-package org.howard.edu.ood.hw2;
+package org.howard.edu.hw2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.HashMap;
 
-import org.howard.edu.ood.utils.*;
+import org.howard.edu.utils.*;
+
+import java.util.HashMap;
 
 // Author: Sanjeev Roka (@03028036)
 
