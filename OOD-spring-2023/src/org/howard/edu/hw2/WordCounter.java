@@ -1,8 +1,8 @@
 package org.howard.edu.hw2;
 
-import java.io.File;
+//import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 import org.howard.edu.utils.*;
 
@@ -20,7 +20,6 @@ public class WordCounter {
 	        try {	        	
 //	        	String readText = fr.readToString(fileName);
 		        FileReader fr = new FileReader();
-
 		        HashMap<String, Integer> wordCount = new HashMap<>();
 
 	        	 // Create a Scanner to read the text file
@@ -32,27 +31,30 @@ public class WordCounter {
 
 	                // Split the line into words
 //	                String[] words = line.split(" ");
+		        
+		        // Read strings from the given file and convert it to array by splitting on spaces. 
 	                
-		            String[] words = fr.readToString(fileName).split(" ");       
+	            String[] words = fr.readToString(fileName).split(" ");       
 
-	                // Iterate through the words
-	                for (String word : words) {
-	                	if(word.length() > 3){
-	                		// Remove any punctuation from the word
-	                		word = word.replaceAll("[^a-zA-Z ]", "").toLowerCase();
-	                		// Check the length of the word. 
-	                		
-	                		// Check if the word is already in the HashMap
-	                		if (wordCount.containsKey(word)) {
-	                			// If it is, increment the count
-	                			wordCount.put(word, wordCount.get(word) + 1);
-	                		} else {
-	                			// If it isn't, add it to the HashMap with a count of 1
-	                			wordCount.put(word, 1);
-	                		}
-	                		
-	                	}
-	                }
+                // Iterate through the words
+                for (String word : words) {
+                	// Check the length of the word and if it contains only alphabets
+                	if(word.length() > 3 && word.matches("^[a-zA-Z]*$")){
+                		
+                		// Convert to Lower Case
+                		word = word.toLowerCase();
+                		
+                		// Check if the word is already in the HashMap
+                		if (wordCount.containsKey(word)) {
+                			// If it is, increment the count by 1
+                			wordCount.put(word, wordCount.get(word) + 1);
+                		} else {
+                			// If it isn't, add it to the HashMap with the initial count of 1
+                			wordCount.put(word, 1);
+                		}
+                		
+                	}
+                }
 //	            }
 
 	            // Print the word count
