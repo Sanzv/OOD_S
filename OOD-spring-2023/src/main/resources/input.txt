@@ -1,2 +1,2 @@
-Design and code a program that reads design DeSiGn a text file, and counts the number of times each word that
- appears 100ssss !! , *     asd *
+Design and code a program that reads design DeSiGn a text file and counts the number of times each word that
+ appears 100ssss !! , *     asd * I've They're they 101dalmation

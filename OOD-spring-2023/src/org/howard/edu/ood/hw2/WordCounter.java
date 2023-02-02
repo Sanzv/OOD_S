@@ -41,7 +41,7 @@ public class WordCounter {
                 // Iterate through the words
                 for (String word : words) {
                 	// Check the length of the word and if it contains only alphabets
-                	if(word.length() > 3 && word.matches("^[a-zA-Z]*$")){
+                	if(word.length() > 3 && word.matches(".*[a-zA-Z]+.*")){
                 		
                 		// Convert to Lower Case
                 		word = word.toLowerCase();
