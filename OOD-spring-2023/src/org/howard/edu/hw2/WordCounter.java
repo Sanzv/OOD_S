@@ -32,10 +32,13 @@ public class WordCounter {
 	                // Split the line into words
 //	                String[] words = line.split(" ");
 		        
-		        // Read strings from the given file and convert it to array by splitting on spaces. 
+		        // Read strings from the given file and print it.
+		        String fileContent = fr.readToString(fileName);
+		        System.out.println("The content of the file is: " + fileContent);
 	                
-	            String[] words = fr.readToString(fileName).split(" ");       
-
+//		        Convert it to array of strings by splitting on spaces. 
+	            String[] words = fileContent.split(" ");     
+	            
                 // Iterate through the words
                 for (String word : words) {
                 	// Check the length of the word and if it contains only alphabets
@@ -56,10 +59,9 @@ public class WordCounter {
                 	}
                 }
 //	            }
-
 	            // Print the word count
 	            for (String word : wordCount.keySet()) {
-	                System.out.println(word + ": " + wordCount.get(word));
+	                System.out.println(word + "\t" + wordCount.get(word));
 	            }
 	            
 	        } catch (FileNotFoundException e) {
