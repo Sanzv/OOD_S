@@ -1,4 +1,4 @@
-package org.howard.edu.hw1;
+package org.howard.edu.ood.hw1;
 
 // Author: Sanjeev Roka (@03028036)
 public class HelloWorld {

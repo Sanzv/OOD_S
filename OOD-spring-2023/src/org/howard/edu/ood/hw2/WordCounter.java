@@ -1,19 +1,18 @@
-package org.howard.edu.hw2;
+package org.howard.edu.ood.hw2;
 
 //import java.io.File;
 import java.io.FileNotFoundException;
 //import java.util.Scanner;
-
-import org.howard.edu.utils.*;
-
 import java.util.HashMap;
+
+import org.howard.edu.ood.utils.*;
 
 // Author: Sanjeev Roka (@03028036)
 
 public class WordCounter {
 	public static void main(String[] args) {
 	        // File path
-	        String fileName = "resources/input.txt";
+	        String fileName = "main/resources/input.txt";
 	        // Create a HashMap to store the word count
 
 	        
