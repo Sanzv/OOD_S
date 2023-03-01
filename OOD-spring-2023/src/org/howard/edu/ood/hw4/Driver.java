@@ -31,8 +31,12 @@ public class Driver {
 		set1.add(4);
 		System.out.println("Set1 = {" + set1.toString() + "} with size " + set1.length() + "\n");
 
-		System.out.println("Smallest value in Set1 is:\t" + set1.smallest());
-		System.out.println("Largest value in Set1 is:\t" + set1.largest() + "\n");
+		try {
+			System.out.println("Smallest value in Set1 is:\t" + set1.smallest());
+			System.out.println("Largest value in Set1 is:\t" + set1.largest() + "\n");
+		}catch(IntegerSetException e) {
+			System.out.println(e);
+		}
 
 		IntegerSet set2 = new IntegerSet();
 		System.out.println("Set 2 initialized.");
@@ -52,8 +56,12 @@ public class Driver {
 		System.out.println("Set1 = {" + set1.toString() + "} with size " + set1.length());
 		System.out.println("Set2 = {" + set2.toString() + "} with size " + set2.length());		
 		
-		System.out.println("Smallest value in Set2 is:\t" + set2.smallest());
-		System.out.println("Largest value in Set2 is:\t" + set2.largest() + "\n");
+		try {
+			System.out.println("Smallest value in Set2 is:\t" + set2.smallest());
+			System.out.println("Largest value in Set2 is:\t" + set2.largest() + "\n");
+		}catch(IntegerSetException e) {
+			System.out.println(e);
+		}
 		
 		System.out.println("Union of Set1 and Set2. ");
 		set1.union(set2);	// union of set1 and set2
@@ -68,9 +76,12 @@ public class Driver {
 		set1.remove(6);
 		System.out.println("Set1 = {" + set1.toString() + "} with size " + set1.length() + "\n");
 		
-		System.out.println("Smallest value in Set1 is:\t" + set1.smallest());
-		System.out.println("Largest value in Set1 is:\t" + set1.largest() + "\n");
-		
+		try {
+			System.out.println("Smallest value in Set1 is:\t" + set1.smallest());
+			System.out.println("Largest value in Set1 is:\t" + set1.largest() + "\n");
+		}catch(IntegerSetException e) {
+			System.out.println(e);
+		}
 		
 		ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(3,5,10,3,5));
 		
@@ -87,6 +98,9 @@ public class Driver {
 		System.out.println("Is Set1 equal to set2 -> " + set1.equals(set2));
 		System.out.println("Is Set2 equal to set3 -> " + set2.equals(set3));
 		System.out.println("Is Set1 equal to set3 -> " + set1.equals(set3));
+		System.out.println("Is Set2 equal to set1 -> " + set2.equals(set1));
+		System.out.println("Is Set3 equal to set2 -> " + set3.equals(set2));
+		System.out.println("Is Set3 equal to set1 -> " + set3.equals(set1));
 
 		
 		System.out.println("\nClearing set2.");
@@ -95,6 +109,13 @@ public class Driver {
 		System.out.println("Set1 = {" + set1.toString() + "} with size " + set1.length());
 		System.out.println("Set2 = {" + set2.toString() + "} with size " + set2.length());
 		System.out.println("Set3 = {" + set3.toString() + "} with size " + set3.length() + "\n");
+		
+		try {
+			System.out.println("Smallest value in Set2 is:\t" + set2.smallest());
+			System.out.println("Largest value in Set2 is:\t" + set2.largest() + "\n");			
+		}catch(IntegerSetException e) {
+			System.out.println(e);
+		}
 		
 		System.out.println("Intersection of Set1 and Set3. ");
 		set1.intersect(set3);
@@ -110,6 +131,9 @@ public class Driver {
 		System.out.println("Set1 = {" + set1.toString() + "} with size " + set1.length());
 		System.out.println("Set2 = {" + set2.toString() + "} with size " + set2.length());
 		System.out.println("Set3 = {" + set3.toString() + "} with size " + set3.length() + "\n");
+		
+		
+
 	}
 
 }

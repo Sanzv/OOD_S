@@ -5,9 +5,11 @@ package org.howard.edu.ood.hw4;
  * @author sanzv
  *
  */
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 class IntegerSetException extends Exception {
 	
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Default constructor that calls the parent's constructor with default message.
 	 */

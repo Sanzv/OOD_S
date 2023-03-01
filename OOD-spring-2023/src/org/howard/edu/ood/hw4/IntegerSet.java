@@ -64,20 +64,17 @@ public class IntegerSet {
 	 */
 	public boolean equals(IntegerSet b) throws IntegerSetException {
 		if(b instanceof IntegerSet) {
-			if(b.length() != this.length()) {
-				return false;
-			}
-			if(this.length() == 0) {
+			if(this.length() == b.length()) {	
+				for(int i = 0; i < this.length(); i++) {
+					int temp_num = this.setList.get(i);
+					if(!b.contains(temp_num)) {
+						return false;
+					}
+				}
 				return true;
-			}
-			
-			if(this.largest() == b.largest() && this.smallest() == b.smallest()) {
-				return true;
-			}
-			
+			}			
 		}
 		return false;
-		
 	}
 	
 	/**
@@ -105,7 +102,7 @@ public class IntegerSet {
 	 */
 	public int largest() throws IntegerSetException  {
 		if(this.isEmpty()) {
-			throw new IntegerSetException();
+			throw new IntegerSetException("The set is Empty to fins the largest number.");
 		}
 		ArrayList<Integer> temp = this.setList;
 		
@@ -122,7 +119,7 @@ public class IntegerSet {
 	 */
 	public int smallest() throws IntegerSetException  {
 		if(this.isEmpty()) {
-			throw new IntegerSetException();
+			throw new IntegerSetException("The set is Empty to find the smallest number.");
 		}
 		ArrayList<Integer> temp = this.setList;
 		
