@@ -6,5 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="org/howard/edu/ood/hw4/javadoc/|org/howard/edu/ood/hw4/javadoc/legal/|org/howard/edu/ood/hw4/javadoc/org/howard/edu/ood/hw4/" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
