@@ -2,6 +2,7 @@ package org.howard.edu.ood.hw5;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -84,34 +85,30 @@ public class IntegerSetTest {
 	@DisplayName("Test case for largest method")
 	public void testLargest() throws IntegerSetException {
 		Throwable exception = assertThrows(IntegerSetException.class, () -> {set.largest();});
+		assertNotNull(exception.getMessage());
 		assertEquals("The set is Empty to find the largest number.", exception.getMessage());
-		try {
-			set.add(1);
-			assertEquals(set.largest(), 1, "Must return the largest element of the IntegerSet.");
-			set.add(4);
-			assertEquals(set.largest(), 4, "Must return the largest element of the IntegerSet.");
-			set.add(2);
-			assertEquals(set.largest(), 4, "Must return the largest element of the IntegerSet.");
-		}catch (IntegerSetException e) {
-			assertEquals("The set is Empty to find the largest number.", e.getMessage());
-		}
+		set.add(1);
+		assertEquals(set.largest(), 1, "Must return the largest element of the IntegerSet.");
+		set.add(4);
+		assertEquals(set.largest(), 4, "Must return the largest element of the IntegerSet.");
+		set.add(2);
+		assertEquals(set.largest(), 4, "Must return the largest element of the IntegerSet.");
+	
 	}
 	
 	@Test
 	@DisplayName("Test case for smallest method")
 	public void testSmallest()  throws IntegerSetException {
 		Throwable exception = assertThrows(IntegerSetException.class, () -> {set.smallest();});
+		assertNotNull(exception.getMessage());
 		assertEquals("The set is Empty to find the smallest number.", exception.getMessage());
-		try {
-			set.add(2);
-			assertEquals(set.smallest(), 2, "Must return the smallest element of the IntegerSet.");
-			set.add(4);
-			assertEquals(set.smallest(), 2, "Must return the smallest element of the IntegerSet.");
-			set.add(1);
-			assertEquals(set.smallest(), 1, "Must return the smallest element of the IntegerSet.");
-		}catch (IntegerSetException e) {
-			assertEquals("The set is Empty to find the smallest number.", e.getMessage());
-		}
+		
+		set.add(2);
+		assertEquals(set.smallest(), 2, "Must return the smallest element of the IntegerSet.");
+		set.add(4);
+		assertEquals(set.smallest(), 2, "Must return the smallest element of the IntegerSet.");
+		set.add(1);
+		assertEquals(set.smallest(), 1, "Must return the smallest element of the IntegerSet.");
 	}
 	
 
