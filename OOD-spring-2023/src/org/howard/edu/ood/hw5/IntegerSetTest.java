@@ -84,9 +84,6 @@ public class IntegerSetTest {
 	@Test
 	@DisplayName("Test case for largest method")
 	public void testLargest() throws IntegerSetException {
-		Throwable exception = assertThrows(IntegerSetException.class, () -> {set.largest();});
-		assertNotNull(exception.getMessage());
-		assertEquals("The set is Empty to find the largest number.", exception.getMessage());
 		set.add(1);
 		assertEquals(set.largest(), 1, "Must return the largest element of the IntegerSet.");
 		set.add(4);
@@ -97,12 +94,19 @@ public class IntegerSetTest {
 	}
 	
 	@Test
+	@DisplayName("Test case for largest method")
+	public void testLargest_WithIntegerSetException() throws IntegerSetException {
+		Throwable exception = assertThrows(IntegerSetException.class, () -> {set.largest();});
+		assertNotNull(exception.getMessage());
+		assertEquals("The set is Empty to find the largest number.", exception.getMessage());
+	}
+	
+	@Test
 	@DisplayName("Test case for smallest method")
 	public void testSmallest()  throws IntegerSetException {
 		Throwable exception = assertThrows(IntegerSetException.class, () -> {set.smallest();});
 		assertNotNull(exception.getMessage());
 		assertEquals("The set is Empty to find the smallest number.", exception.getMessage());
-		
 		set.add(2);
 		assertEquals(set.smallest(), 2, "Must return the smallest element of the IntegerSet.");
 		set.add(4);
@@ -124,6 +128,7 @@ public class IntegerSetTest {
 		assertEquals(set.length(), 2, "Adding Element to IntegerSet must increment Length.");
 		
 		set.add(2);
+		assertTrue(set.contains(2), "IntegerSet must contain the added element.");
 		assertEquals(set.length(), 2, "Adding Duplicate Element must keep the length of IntegerSet same.");
 	}
 	
@@ -220,7 +225,8 @@ public class IntegerSetTest {
 		set.add(1);
 		set.add(2);
 		set.add(3);
-		
+		assertTrue(set.toString() instanceof String, "must return the setList as String");
+
 		assertEquals(set.toString(), "1, 2, 3", "Must return elements of IntegerSet separated by comma in the form of string.");
 		
 		set.add(4);
